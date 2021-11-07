@@ -1539,8 +1539,11 @@ svg {
 }
 
 .feedbacks__item {
+  width: 100px;
+  height: 100px;
   cursor: pointer;
   position: absolute;
+  z-index: 5;
 }
 
 .feedbacks__item .feedback {
@@ -3405,6 +3408,7 @@ html {
   }
 
   .feedbacks__content {
+    margin-top: 20px;
     position: relative;
   }
 
@@ -3414,6 +3418,8 @@ html {
 
   .feedbacks__left {
     position: absolute;
+    /* width: 40px;
+            height: 270px; */
     top: 0;
     left: -20px;
   }
@@ -3436,6 +3442,11 @@ html {
   .feedbacks__left .feedbacks__items :nth-child(4) {
     top: 210px;
     left: 0px;
+  }
+
+  .feedbacks__item {
+    width: 60px;
+    height: 60px;
   }
 
   .feedbacks__image {
