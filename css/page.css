@@ -1552,6 +1552,14 @@ svg {
   color: #ff44ad;
 }
 
+.program__btn .program-btn:hover {
+  -webkit-transform: scale(1.05);
+     -moz-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+       -o-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .info-item {
   margin-top: 10px;
   padding: 10px 10px 10px 18px;
