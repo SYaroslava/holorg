@@ -235,7 +235,7 @@ svg {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   top: 10px;
   left: 0px;
@@ -730,6 +730,7 @@ svg {
 }
 
 .play__btn img {
+  pointer-events: none;
   width: 23px;
   height: 39px;
 }
@@ -1933,6 +1934,7 @@ svg {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 main._block {
@@ -1943,6 +1945,55 @@ main._block {
 
 html {
   overflow-x: hidden;
+}
+
+.modal-video {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.612);
+  z-index: 200;
+}
+
+.modal-video__body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  -webkit-animation: modal 0.5s ease 0s forwards;
+     -moz-animation: modal 0.5s ease 0s forwards;
+       -o-animation: modal 0.5s ease 0s forwards;
+          animation: modal 0.5s ease 0s forwards;
+}
+
+.modal-video__video iframe {
+  max-width: 100%;
+  width: 560px;
+  height: 316px;
+}
+
+.modal-video .modal-close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 20px;
+}
+
+.modal-video .modal-close svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+.modal-video .modal-close:hover svg {
+  fill: #ff44ad;
+}
+
+.modal-video._open {
+  display: block;
 }
 
 .modal-slide.modal {

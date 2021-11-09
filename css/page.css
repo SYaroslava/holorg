@@ -235,7 +235,7 @@ svg {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   top: 10px;
   left: 0px;
@@ -730,6 +730,7 @@ svg {
 }
 
 .play__btn img {
+  pointer-events: none;
   width: 23px;
   height: 39px;
 }
