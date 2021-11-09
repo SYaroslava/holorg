@@ -1802,8 +1802,11 @@ svg {
   z-index: 3;
 }
 
-.gallery .slider__item img {
+.gallery .slider__item picture {
   pointer-events: none;
+}
+
+.gallery .slider__item img {
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
@@ -1996,20 +1999,21 @@ html {
   display: block;
 }
 
-.modal-slide.modal {
+.modal-slider.modal {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 200;
   top: 0px;
   left: 0px;
   display: none;
+  background-color: rgba(255, 255, 255, 0.612);
 }
 
-.modal-slide.modal .modal__body {
+.modal-slider.modal .modal__body {
   width: 100%;
   height: 100%;
-  padding: 40px 20px;
+  padding: 50px 40px;
   -webkit-transform: scale(0);
      -moz-transform: scale(0);
       -ms-transform: scale(0);
@@ -2021,35 +2025,109 @@ html {
           animation: modal 0.5s ease 0.1s forwards;
 }
 
-.modal-slide.modal .modal__image {
+.modal-slider.modal .slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-slider.modal .slider__body {
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  min-width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-slider.modal .slider__item {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
   width: 100%;
   height: 100%;
 }
 
-.modal-slide.modal .modal__image img {
+.modal-slider.modal .slider__item img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.modal-slide.modal .modal-close {
+.modal-slider.modal .slider__arrows .arrow-right,
+.modal-slider.modal .slider__arrows .arrow-left {
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  width: 82px;
+  height: 83px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  top: -webkit-calc(50% - 40px);
+  top: -moz-calc(50% - 40px);
+  top: calc(50% - 40px);
+}
+
+.modal-slider.modal .slider__arrows .arrow-right svg,
+.modal-slider.modal .slider__arrows .arrow-left svg {
+  fill: #bf0101;
+}
+
+.modal-slider.modal .slider__arrows .arrow-right:hover,
+.modal-slider.modal .slider__arrows .arrow-left:hover {
+  background-color: #324162;
+}
+
+.modal-slider.modal .slider__arrows .arrow-right:hover svg,
+.modal-slider.modal .slider__arrows .arrow-left:hover svg {
+  fill: white;
+}
+
+.modal-slider.modal .slider__arrows .arrow-left {
+  left: 0px;
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.modal-slider.modal .slider__arrows .arrow-right {
+  right: 0px;
+}
+
+.modal-slider.modal .modal-close {
   position: absolute;
   top: 0px;
   right: 0px;
   padding: 20px;
 }
 
-.modal-slide.modal .modal-close svg {
+.modal-slider.modal .modal-close svg {
   width: 40px;
   height: 40px;
 }
 
-.modal-slide.modal .modal-close:hover svg {
+.modal-slider.modal .modal-close:hover svg {
   fill: white;
 }
 
-.modal-slide.modal._open {
+.modal-slider.modal._open {
   display: block;
 }
 
@@ -3650,6 +3728,32 @@ html {
 
   .gallery .slider__arrows .arrow-right {
     right: -20px;
+  }
+
+  .modal-slider.modal .modal__body {
+    padding: 20px 10px;
+  }
+
+  .modal-slider.modal .slider__arrows .arrow-right,
+  .modal-slider.modal .slider__arrows .arrow-left {
+    width: 30px;
+    height: 30px;
+    top: -webkit-calc(50% - 15px);
+    top: -moz-calc(50% - 15px);
+    top: calc(50% - 15px);
+  }
+
+  .modal-slider.modal .slider__arrows .arrow-left {
+    left: 0px;
+    -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  .modal-slider.modal .slider__arrows .arrow-right {
+    right: 0px;
   }
 
   .form-sended-modal .form-sended-modal__body {
