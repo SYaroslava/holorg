@@ -1764,6 +1764,7 @@ svg {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 main._block {
